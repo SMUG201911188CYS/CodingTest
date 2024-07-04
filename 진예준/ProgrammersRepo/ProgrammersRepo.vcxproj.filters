@@ -42,6 +42,18 @@
     <ClCompile Include="제출용\순위검색.cpp">
       <Filter>제출용</Filter>
     </ClCompile>
+    <ClCompile Include="스킬트리.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="제출용\스킬트리.cpp">
+      <Filter>제출용</Filter>
+    </ClCompile>
+    <ClCompile Include="프로세스.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="제출용\프로세스.cpp">
+      <Filter>제출용</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -60,6 +72,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="순위검색.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="스킬트리.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="프로세스.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
