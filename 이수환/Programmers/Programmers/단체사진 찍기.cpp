@@ -1,69 +1,86 @@
+#include <string>
 #include <vector>
-#include <stack>
 #include <iostream>
 
 using namespace std;
 
-vector<int> moveX = { 1, 0, -1, 0 };
-vector<int> moveY = { 0, -1, 0, 1 };
+vector<char> nameList = { 'A', 'C', 'F', 'J', 'M', 'N', 'R', 'T' };
+
+int count = 0;
 
 
-// 전역 변수를 정의할 경우 함수 내에 초기화 코드를 꼭 작성해주세요.
-vector<int> solution(int m, int n, vector<vector<int>> picture) {
-    // m이 y, n이 x
-    int number_of_area = 0;
-    int max_size_of_one_area = 0;
 
-    vector<int> answer(2);
-    answer[0] = number_of_area;
-    answer[1] = max_size_of_one_area;
+bool checkData(string data, vector<char>& combVec) {
+    char first = data[0];
+    char second = data[2];
+    char oper = data[3];
+    int value = data[4] - '0';
 
-    vector<bool> vec(n, false);
-    vector<vector<bool>> visit(m, vec);
+    int firstIndex = 0;
+    int secondIndex = 0;
+    int index = 0;
+    for (char cur : combVec) {
+        if (cur == first) {
+            firstIndex = index;
+        }
+        if (cur == second) {
+            secondIndex = index;
+        }
+        index++;
+    }
 
+    int dis = abs(firstIndex - secondIndex) - 1;
 
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
-            int count = 0;
-            if (visit[i][j] == false && picture[i][j] != 0)
+    if (oper == '>') return dis > value;
+    else if (oper == '=') return dis == value;
+    else if (oper == '<') return dis < value;
+
+    return false;
+}
+void comb(vector<char> combVec, vector<bool> check, int depth, vector<string>& dataVec)
+{
+    if (depth > nameList.size())
+    {
+        bool flag = true;
+        for (string data : dataVec)
+        {
+            if (!checkData(data, combVec))
             {
-                stack<pair<int, int>> s;
-                s.push(pair(j, i));
-                while (!s.empty()) {
-                    int curX = s.top().first;
-                    int curY = s.top().second;
-                    s.pop();
-                    visit[curY][curX] = true;
-                    count++;
-
-                    for (int i = 0; i < 4; i++) {
-                        int newX = curX + moveX[i];
-                        int newY = curY + moveY[i];
-
-                        if (newX >= 0 && newX < n && newY >= 0 && newY < m
-                            && visit[newY][newX] == false && picture[curY][curX] == picture[newY][newX]) {
-                            visit[newY][newX] = true;
-                            s.push(pair(newX, newY));
-                        }
-                    }
-
-
-                }
-
-                if (count > 0) {
-                    number_of_area++;
-                }
-
-                if (count > max_size_of_one_area) {
-                    max_size_of_one_area = count;
-                }
-
+                flag = false;
+                break;
             }
+        }
+        if (flag)
+        {
+            count++;
+        }
+        return;
+    }
+
+    for (int i = 0; i < nameList.size(); i++)
+    {
+        if (!check[i])
+        {
+            vector<bool> newCheck(check);
+            vector<char> newCombVec(combVec);
+            newCheck[i] = true;
+            newCombVec.push_back(nameList[i]);
+            comb(newCombVec, newCheck, depth + 1, dataVec);
         }
     }
 
-    answer[0] = number_of_area;
-    answer[1] = max_size_of_one_area;
+}
+
+// 전역 변수를 정의할 경우 함수 내에 초기화 코드를 꼭 작성해주세요.
+int solution(int n, vector<string> data)
+{
+    int answer = 0;
+    count = 0;
+
+    vector<bool> check(nameList.size(), false);
+    vector<char> combVec;
+    comb(combVec, check, 1, data);
+    answer = count;
 
     return answer;
 }
