@@ -54,6 +54,18 @@
     <ClCompile Include="제출용\프로세스.cpp">
       <Filter>제출용</Filter>
     </ClCompile>
+    <ClCompile Include="단체사진찍기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="카카오프렌즈컬러링북.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="제출용\카카오프렌즈컬러링북.cpp">
+      <Filter>제출용</Filter>
+    </ClCompile>
+    <ClCompile Include="제출용\단체사진찍기.cpp">
+      <Filter>제출용</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -78,6 +90,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="프로세스.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="단체사진찍기.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="카카오프렌즈컬러링북.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
