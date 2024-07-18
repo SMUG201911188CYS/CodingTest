@@ -135,15 +135,10 @@
     <ClCompile Include="순위검색.cpp" />
     <ClCompile Include="스킬트리.cpp" />
     <ClCompile Include="이모티콘할인행사.cpp" />
-    <ClCompile Include="제출용\단체사진찍기.cpp" />
-    <ClCompile Include="제출용\메뉴리뉴얼.cpp" />
-    <ClCompile Include="제출용\순위검색.cpp" />
-    <ClCompile Include="제출용\스킬트리.cpp" />
-    <ClCompile Include="제출용\카카오프렌즈컬러링북.cpp" />
-    <ClCompile Include="제출용\프로세스.cpp" />
     <ClCompile Include="카카오프렌즈컬러링북.cpp" />
     <ClCompile Include="택배배달과수거하기.cpp" />
     <ClCompile Include="프로세스.cpp" />
+    <ClCompile Include="행렬테두리회전하기.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
@@ -156,6 +151,7 @@
     <ClInclude Include="카카오프렌즈컬러링북.h" />
     <ClInclude Include="택배배달과수거하기.h" />
     <ClInclude Include="프로세스.h" />
+    <ClInclude Include="행렬테두리회전하기.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
