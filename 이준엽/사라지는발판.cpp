@@ -24,16 +24,9 @@ int moves(int x1, int y1, int x2, int y2){
     }
     return ret;
 }
-
 int solution(vector<vector<int>> board, vector<int> aloc, vector<int> bloc) {
-    int n = board.size();
-    int m = board[0].size();
+    n = board.size();
+    m = board[0].size();
     MAP = board;
-    for(int i = 0 ; i < 5; i++){
-        for(int j = 0; j < 5; j++){
-            visited[i][j] = 0;
-        }
-    }
-
     return moves(aloc[0],aloc[1], bloc[0],bloc[1]);
 }
