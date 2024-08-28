@@ -52,4 +52,3 @@ int solution(vector<vector<int>> board, vector<vector<int>> skill) {
     answer = findAnswer(board);
     return answer;
 }
-출처: https://yabmoons.tistory.com/728 [얍문's Coding World..:티스토리]
